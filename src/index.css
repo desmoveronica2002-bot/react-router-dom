@@ -2,3 +2,10 @@
   width: 150px;
   height: auto;
 }
+
+.contorno-card{
+   border: 1px solid #ccc; 
+   border-radius: 15px;
+   padding: 10px;
+   margin: 10px;
+}
