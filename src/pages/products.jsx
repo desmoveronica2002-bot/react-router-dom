@@ -37,7 +37,7 @@ export default function Products() {
 
       <main className="container">
         <div>
-          <h2 className="text-center mb-4">Lista Prodotti</h2>
+          <h2>Lista Prodotti</h2>
         </div>
 
         <div className="row">
