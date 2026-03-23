@@ -1,36 +1,51 @@
-export default function Products(){
-    return(
-        <>
-        <header> 
-            <nav class="navbar navbar-expand-lg bg-body-tertiary">
-               <div class="container-fluid">
-                  <div class="collapse navbar-collapse" id="navbarNav">
-                   <ul class="navbar-nav">
-                      <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/">Home</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="/presentazione">chi siamo</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="products">prodotti</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-            </nav>
-        </header>
+import { useState, useEffect } from "react";
+import axios from "axios";
 
-        <main>
-            <h1>BENVENUTO!</h1>
-            <img src="https://nuvoluzione.com/wp-content/uploads/2016/03/vendita-promozionale.jpg" alt="img promozionale" />
+export default function Products() {
+  const [todos, setTodos] = useState([]);
 
-        </main>
+  // Fetch dei dati
+  function fetchTodos() {
+    axios.get("https://fakestoreapi.com/products")
+      .then((res) => setTodos(res.data))
+      .catch((err) => console.log(err));
+  }
+  useEffect(() => {
+    fetchTodos();
+  }, []);
 
-        <footer>
-            <h2>fine</h2>
-        </footer>
-          
-          </>
-    )
+  return (
+    <>
+      <header>
+        <nav className="navbar navbar-expand-lg bg-body-tertiary">
+          <div className="container-fluid">
+            <div className="collapse navbar-collapse" id="navbarNav">
+              <ul className="navbar-nav">
+                <li className="nav-item">
+                  <a className="nav-link active" aria-current="page" href="/">Home</a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="/presentazione">chi siamo</a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="/products">prodotti</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <div>
+          <h2>Lista Prodotti</h2>
+          <ul>
+            {todos.map((todo) => (
+              <li key={todo.id}>{todo.title}</li>
+            ))}
+          </ul>
+        </div>
+      </main>
+    </>
+  );
 }
