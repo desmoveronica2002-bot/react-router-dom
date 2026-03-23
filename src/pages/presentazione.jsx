@@ -1,4 +1,4 @@
-export default function presentazione(){
+export default function Presentazione(){
     return(
         <>
           <h1>BENVENUTO!</h1>

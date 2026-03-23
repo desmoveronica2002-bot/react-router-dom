@@ -1,4 +1,4 @@
-export default function products(){
+export default function Products(){
     return(
         <>
           <h1>BENVENUTO!</h1>
