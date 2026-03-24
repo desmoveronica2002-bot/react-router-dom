@@ -50,7 +50,7 @@ export default function Products() {
                         <p className="card-text"><strong>Prezzo:</strong> {product.price} €</p>
                         <p className="card-text">{product.category}</p>
                         <p className="card-text">Rating: {product.rating.rate} ⭐ ({product.rating.count} recensioni)</p>
-                        <Link to='/prodoct'>Vedi prodotto</Link>
+                        <Link to={`/products/${product.id}`}>Vedi prodotto</Link>
                     </div>
                 </div>
             ))}
