@@ -14,11 +14,24 @@ export default function ProductPage(){
     useEffect(()=>{
         fetch(api_url)
         .then(res=>res.json())
-        .then(data=>setProduct(data))
+        .then(data=>{
+            setProduct(data)
+    })
 
     },[])
 
     return(
-        <h1>product : {id}</h1>
+        <>
+
+            {product!==null &&(
+                <div>
+                    <img src={product.image}></img>
+                    <h1>{product.title}</h1>
+
+                </div>
+
+
+            )}
+        </>
     )
 }
