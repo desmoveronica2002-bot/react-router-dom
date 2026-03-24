@@ -43,7 +43,7 @@ export default function Products() {
 
         <div className="row">
             {todos.map((product) => (
-                <div key={product.id} className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4 d-flex flex-column justify-content-center align-items-center text-center contorno-card">
+                <div key={product.id} className="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center contorno-card">
                    <img src={product.image} className="dimensione"/>
                     <div className="card-body">
                         <h3 className="card-title">{product.title}</h3>
