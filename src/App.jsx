@@ -9,6 +9,9 @@ function App() {
 
   return (
     <>
+
+    <BudgetContext.Provider value={{ title: 'prova' }} />
+
     <BrowserRouter>
       <Routes> 
         <Route path="/" element={<Home/>}/>
