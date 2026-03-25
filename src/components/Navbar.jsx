@@ -8,7 +8,7 @@ export default function Navbar() {
   const toggleBudgetMode = () => setBudgetMode(!budgetMode);
 
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav className="navbar navbar-expand-lg bg-body-tertiary container">
 
                 <div className="container-fluid">
                   <div className="collapse navbar-collapse" id="navbarNav">
