@@ -6,11 +6,12 @@ import ProductPage from "./pages/ProductPage";
 import BudgetContext from "./contexts/BudgetContext";
 
 function App() {
+  const [budgetMode, setBudgetMode] = useState(false);
 
   return (
     <>
 
-    <BudgetContext.Provider value={{ title: 'prova' }} />
+    <BudgetContext.Provider value={{ budgetMode, setBudgetMode }}>
 
     <BrowserRouter>
       <Routes> 
@@ -22,6 +23,9 @@ function App() {
 
       </Routes>
     </BrowserRouter>
+
+
+    </BudgetContext.Provider>
 
     </>
   )

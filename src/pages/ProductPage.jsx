@@ -1,7 +1,21 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 
+import { useContext } from "react";
+import BudgetContext from "../contexts/BudgetContext";
+
+
 export default function ProductPage(){
+
+
+    const ctx = useContext(BudgetContext)
+    console.log(ctx);
+
+
+
+
+
+
 
     const [product, setProduct]=useState(null)
 
